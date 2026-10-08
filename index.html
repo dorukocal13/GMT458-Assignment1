@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doruk ÖCAL | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .skills-section {
+            margin-top: 30px;
+            text-align: left;
+            background: var(--bg-light-green);
+            padding: 20px 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-green);
+        }
+        .skills-section h3 {
+            color: var(--primary-green);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .skills-list {
+            list-style-type: disc; 
+            padding-left: 20px; 
+            margin: 0;
+        }
+        .skills-list li {
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body class="lang-en">
+    <header>
+        <a href="index.html" class="brand-logo">
+            Doruk ÖCAL
+        </a>
+        <nav>
+            <a href="index.html">
+                <span class="tr">Hakkımda & Projeler</span>
+                <span class="en">About & Projects</span>
+            </a>
+            <a href="education.html">
+                <span class="tr">Eğitim Geçmişi</span>
+                <span class="en">Education Background</span>
+            </a>
+            <a href="maps.html">
+                <span class="tr">Haritalar</span>
+                <span class="en">Maps</span>
+            </a>
+        </nav>
+        <div class="lang-switch">
+            <button onclick="setLanguage('tr')">TR</button>
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+    </header>
+
+    <div class="container fade-in">
+        <div class="hero-card">
+            <h1>
+                <span class="tr">Merhaba, Ben Doruk ÖCAL</span>
+                <span class="en">Hello, I'm Doruk ÖCAL</span>
+            </h1>
+            
+            <p class="tr">
+                Hacettepe Üniversitesi Harita Mühendisliği 4. sınıf öğrencisiyim. QGIS, Netcad, Pix4Dmapper ve Python gibi güncel Coğrafi Bilgi Sistemleri (CBS), fotogrametri ve veri işleme yazılımlarına hakimim. Sahadaki kadastro güncelleme staj deneyimim ve akademik İngilizce seviyem ile Harita Mühendisliği alanında aktif ve yetkin bir rol almayı hedefliyorum.
+            </p>
+            <p class="en">
+                I am a 4th-year Geomatics Engineering student at Hacettepe University. I am proficient in current Geographic Information Systems (GIS), photogrammetry, and data processing software such as QGIS, Netcad, Pix4Dmapper, and Python. With my field experience in cadastral updating internships and academic English proficiency, I aim to take an active and competent role in the field of Geomatics Engineering.
+            </p>
+
+            <div class="skills-section">
+                <h3>
+                    <span class="tr">Yetkinlikler ve Teknik Beceriler</span>
+                    <span class="en">Competencies & Technical Skills</span>
+                </h3>
+                <ul class="skills-list">
+                    <li>
+                        <span class="tr"><strong>CBS & Haritalama:</strong> QGIS, Netcad</span>
+                        <span class="en"><strong>GIS & Mapping:</strong> QGIS, Netcad</span>
+                    </li>
+                    <li>
+                        <span class="tr"><strong>Fotogrametri & İHA Veri İşleme:</strong> Pix4Dmapper</span>
+                        <span class="en"><strong>Photogrammetry & UAV Data Processing:</strong> Pix4Dmapper</span>
+                    </li>
+                    <li>
+                        <span class="tr"><strong>Yazılım & Programlama:</strong> Python</span>
+                        <span class="en"><strong>Software & Programming:</strong> Python</span>
+                    </li>
+                    <li>
+                        <span class="tr"><strong>Ofis Yazılımları:</strong> Microsoft Office (Word, Excel, PowerPoint)</span>
+                        <span class="en"><strong>Office Software:</strong> Microsoft Office (Word, Excel, PowerPoint)</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+
+        <h2 class="section-title">
+            <span class="tr">Projelerim</span>
+            <span class="en">My Projects</span>
+        </h2>
+        
+        <div class="grid-container">
+            <div class="card">
+                <div>
+                    <h3>WebGIS Personal Portfolio</h3>
+                    <p class="tr">Leaflet ve OpenLayers haritaları, dinamik dil seçeneği ve zümrüt yeşili modern arayüz içeren kişisel WebGIS portfolyo projesi.</p>
+                    <p class="en">Personal WebGIS portfolio project featuring Leaflet & OpenLayers maps, dynamic language switcher, and modern green interface.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Geospatial Data Processing</h3>
+                    <p class="tr">Python, GeoPandas ve QGIS kütüphaneleri kullanılarak geliştirilmiş mekansal veri analizi ve haritalama betikleri.</p>
+                    <p class="en">Spatial data analysis and mapping scripts developed using Python, GeoPandas, and QGIS libraries.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Coordinate Transformation Scripts</h3>
+                    <p class="tr">Jeodezik koordinatlar ve projeksiyon sistemleri arasında otomatik dönüşüm sağlayan Python kod deposu.</p>
+                    <p class="en">Python code repository providing automated transformations between geodetic coordinates and projection systems.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Doruk ÖCAL - GMT458 WebGIS | 
+           <a href="https://github.com/dorukocal13" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: bold;">
+               <span class="tr">GitHub Profilim</span>
+               <span class="en">My GitHub Profile</span>
+           </a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
