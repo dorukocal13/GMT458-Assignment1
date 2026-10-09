@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps | Doruk ÖCAL</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
+</head>
+<body class="lang-en">
+    <header>
+        <a href="index.html" class="brand-logo">
+            Doruk ÖCAL
+        </a>
+        <nav>
+            <a href="index.html">
+                <span class="tr">Hakkımda & Projeler</span>
+                <span class="en">About & Projects</span>
+            </a>
+            <a href="education.html">
+                <span class="tr">Eğitim Geçmişi</span>
+                <span class="en">Education Background</span>
+            </a>
+            <a href="maps.html">
+                <span class="tr">Haritalar</span>
+                <span class="en">Maps</span>
+            </a>
+        </nav>
+        <div class="lang-switch">
+            <button onclick="setLanguage('tr')">TR</button>
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+    </header>
+
+    <div class="container fade-in">
+        
+        <div class="map-card">
+            <h3>Hacettepe University</h3>
+            <div id="leafletMap" class="map-box"></div>
+        </div>
+
+        
+        <div class="map-card">
+            <h3>Erasmus Exchange Programs: Warsaw University of Technology and Politecnico di Milano</h3>
+            <div id="olMap" class="map-box"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Doruk ÖCAL - GMT458 WebGIS | 
+           <a href="https://github.com/dorukocal13" target="_blank" style="color: var(--primary-green); text-decoration: none; font-weight: bold;">
+               <span class="tr">GitHub Profilim</span>
+               <span class="en">My GitHub Profile</span>
+           </a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        
+        var leafletMap = L.map('leafletMap').setView([39.8679, 32.7345], 15);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            noWrap: true,
+            attribution: '© OpenStreetMap contributors',
+            bounds: [[-90, -180], [90, 180]]
+        }).addTo(leafletMap);
+
+        var hacettepeMarker = L.marker([39.8679, 32.7345]).addTo(leafletMap);
+        hacettepeMarker.bindPopup("<b>Hacettepe University</b><br>Department of Geomatics Engineering").openPopup();
+
+        
+        var rasterLayer = new ol.layer.Tile({
+            source: new ol.source.OSM({
+                wrapX: false 
+            })
+        });
+
+        var warsawMarker = new ol.Feature({
+            geometry: new ol.geom.Point(ol.proj.fromLonLat([21.0122, 52.2297])),
+            name: 'Warsaw University of Technology'
+        });
+
+        var milanMarker = new ol.Feature({
+            geometry: new ol.geom.Point(ol.proj.fromLonLat([9.2274, 45.4786])),
+            name: 'Politecnico di Milano'
+        });
+
+        var markerStyle = new ol.style.Style({
+            image: new ol.style.Icon({
+                anchor: [0.5, 1],
+                src: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+                scale: 0.06
+            })
+        });
+
+        warsawMarker.setStyle(markerStyle);
+        milanMarker.setStyle(markerStyle);
+
+        var vectorSource = new ol.source.Vector({
+            features: [warsawMarker, milanMarker]
+        });
+
+        var vectorLayer = new ol.layer.Vector({
+            source: vectorSource
+        });
+
+        var olMap = new ol.Map({
+            target: 'olMap',
+            layers: [rasterLayer, vectorLayer],
+            view: new ol.View({
+                center: ol.proj.fromLonLat([15.5, 48.5]),
+                zoom: 4.5
+            })
+        });
+    </script>
+</body>
+</html>
