@@ -12,10 +12,10 @@ This project is a personal WebGIS portfolio developed for the GMT458 course. It 
 * **Session Persistence:** Utilizes JavaScript's `sessionStorage` to maintain the user's selected language preference while navigating between different pages within the same active session.
 
 ## AI Usage and Learnings
-* **Estimated AI Usage:** The total AI usage to realize this project is estimated to be 2 hours[cite: 6].
+* **Estimated AI Usage:** The total AI usage to realize this project is estimated to be 2 hours.
 * **Specific Learnings from AI:** 
-  * I learned how to properly implement `sessionStorage` in JavaScript to keep the language preference persistent across multiple HTML pages without resetting to the default language on every page load[cite: 6]. 
-  * I also learned how to effectively structure CSS variables for a consistent color theme and utilize flexbox/grid layouts to create a responsive, modern user interface[cite: 6].
+  * I learned how to properly implement `sessionStorage` in JavaScript to keep the language preference persistent across multiple HTML pages without resetting to the default language on every page load. 
+  * I also learned how to effectively structure CSS variables for a consistent color theme and utilize flexbox/grid layouts to create a responsive, modern user interface.
 
 ## Author
 Doruk ÖCAL
